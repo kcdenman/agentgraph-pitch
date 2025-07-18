@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AgentGraph brand variables */
+:root {
+  --brand-mint: #00FF85;
+  --brand-mint-dark: #20DC8E;
+  --brand-black: #000;
+  --brand-white: #fff;
+}
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Top-only spacing utility layer */
+@layer utilities {
+  .space-y-top > * + * {
+    margin-top: 1rem;
+  }
+  .space-y-top-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  .space-y-top-8 > * + * {
+    margin-top: 2rem;
+  }
+}
+
+/* Reveal.js overrides with AgentGraph branding */
+.reveal {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--brand-white);
+  color: var(--brand-black);
+}
+
+.reveal.dark {
+  background: var(--brand-black);
+  color: var(--brand-white);
+}
+
+/* Typography with top-only spacing */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-weight: 600;
+  color: var(--brand-black);
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+.dark .reveal h1, 
+.dark .reveal h2, 
+.dark .reveal h3, 
+.dark .reveal h4, 
+.dark .reveal h5, 
+.dark .reveal h6 {
+  color: var(--brand-white);
+}
+
+.reveal h1:first-child,
+.reveal h2:first-child,
+.reveal h3:first-child {
+  margin-top: 0;
+}
+
+.reveal h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.reveal h2 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.reveal h3 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+/* Paragraphs and lists with top-only spacing */
+.reveal p, .reveal ul, .reveal ol, .reveal blockquote {
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
+.reveal p:first-child,
+.reveal ul:first-child,
+.reveal ol:first-child {
+  margin-top: 0;
+}
+
+.reveal li {
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+.reveal li:first-child {
+  margin-top: 0;
+}
+
+/* Links with brand styling */
+.reveal a {
+  color: var(--brand-mint);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+  padding: 0.1em 0.2em;
+  border-radius: 0.25rem;
+}
+
+.reveal a:hover {
+  text-decoration: none;
+  background-color: var(--brand-mint);
+  color: var(--brand-black);
+}
+
+/* Images with consistent styling */
+.reveal section img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb;
+  margin: 1em auto 0 auto;
+}
+
+.dark .reveal section img {
+  border-color: #374151;
+}
+
+.reveal section img:first-child {
+  margin-top: 0;
+}
+
+/* Code blocks */
+.reveal pre, .reveal code {
+  background-color: #f3f4f6;
+  border-radius: 0.25rem;
+}
+
+.dark .reveal pre, 
+.dark .reveal code {
+  background-color: #1f2937;
+}
+
+.reveal pre {
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.reveal code {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Tables */
+.reveal table {
+  border-collapse: collapse;
+  border: 1px solid #d1d5db;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.dark .reveal table {
+  border-color: #4b5563;
+}
+
+.reveal th, .reveal td {
+  border: 1px solid #d1d5db;
+  padding: 1rem;
+}
+
+.dark .reveal th, 
+.dark .reveal td {
+  border-color: #4b5563;
+}
+
+.reveal th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.dark .reveal th {
+  background-color: #1f2937;
+}
+
+/* Blockquotes */
+.reveal blockquote {
+  border-left: 4px solid var(--brand-mint);
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #374151;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.dark .reveal blockquote {
+  color: #d1d5db;
+}
+
+/* Buttons and interactive elements */
+.reveal button, .reveal .button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.reveal .button-primary, .reveal button.primary {
+  background-color: var(--brand-mint);
+  color: var(--brand-black);
+  transform: translateY(0);
+}
+
+.reveal .button-primary:hover, .reveal button.primary:hover {
+  background-color: var(--brand-mint-dark);
+  box-shadow: 0 0 10px var(--brand-mint);
+  transform: translateY(-2px);
+}
+
+.reveal .button-secondary, .reveal button.secondary {
+  border: 2px solid var(--brand-mint);
+  color: var(--brand-mint);
+}
+
+.reveal .button-secondary:hover, .reveal button.secondary:hover {
+  background-color: var(--brand-mint);
+  color: var(--brand-black);
+}
+
+/* Fragment animations */
+.reveal .fragment {
+  transition: all 0.3s ease;
+}
+
+.reveal .fragment.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal .fragment.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Progress bar */
+.reveal .progress {
+  color: var(--brand-mint);
+}
+
+/* Dark mode support */
+.dark .reveal {
+  background: var(--brand-black);
+  color: var(--brand-white);
+}
+
+/* Slide transitions */
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section.text-center {
+  text-align: center;
+}
+
+/* Custom utilities for better spacing control */
+.mt-safe {
+  margin-top: 1rem;
+}
+
+.mt-safe-lg {
+  margin-top: 2rem;
+}
+
+.mt-safe-xl {
+  margin-top: 3rem;
+}
