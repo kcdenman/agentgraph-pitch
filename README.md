@@ -22,19 +22,21 @@ Open [http://localhost:5173](http://localhost:5173) to view the pitch deck.
 
 ## 🎨 Design System
 
-The deck uses AgentGraph's brand colors and typography:
+The deck uses AgentGraph's brand colors, typography, and professional iconography:
 
 - **Primary Color**: Mint (`#00FF85`)
 - **Secondary Color**: Mint Dark (`#20DC8E`) 
 - **Text Colors**: Brand Black (`#000000`) / Brand White (`#FFFFFF`)
 - **Typography**: Inter font family
+- **Icons**: Heroicons for consistent, professional iconography
 - **Special Effects**: Mint glow shadow for CTAs
 
 ### Design Principles
 
 - **Top-only spacing**: Uses `mt-*` classes, never `mb-*` for consistent vertical rhythm
-- **Dark mode ready**: Toggle with 🌙/☀️ button in top-right corner
+- **Dark mode ready**: Toggle with Heroicons moon/sun icons in top-right corner
 - **Brand consistency**: All components follow AgentGraph visual guidelines
+- **Professional icons**: Heroicons provide clean, scalable SVG icons throughout
 
 ## 🛠️ Architecture
 
@@ -72,15 +74,17 @@ More content...
 - **Fragment animations**: Use `<!-- .element: class="fragment fade-in" -->`
 - **Custom transitions**: Add `data-transition="fade"` to slide comments
 - **Brand styling**: Use `.text-mint` class for accent colors
+- **Professional icons**: Heroicons SVGs embedded directly in slides
 
 ## 🤖 Chat Widget
 
-The floating chat bubble (`🤖`) provides an interactive AI assistant:
+The floating chat bubble provides an interactive AI assistant:
 
 - **Stub API**: Returns placeholder responses during development
 - **React-powered**: Full TypeScript support with state management
 - **Responsive design**: Works on mobile and desktop
 - **Dark mode compatible**: Adapts to theme changes
+- **Heroicons integration**: Professional chat bubble icon
 
 ### API Integration
 
@@ -101,7 +105,7 @@ const response = await fetch('/api/chat', {
 
 1. **Connect repository** to Vercel
 2. **Set build settings**:
-   - Build Command: `pnpm build`
+   - Build Command: `npm run build`
    - Output Directory: `dist`
 3. **Add environment variables** (see below)
 4. **Deploy** 🚀
@@ -149,6 +153,7 @@ The build outputs a static bundle (`dist/`) that works on:
 2. **Custom styles**: Add to `src/input.css` using Tailwind classes
 3. **Interactive elements**: Extend `chat-widget.tsx` or create new React components
 4. **API endpoints**: Add middleware to `vite.config.ts`
+5. **Icons**: Use Heroicons for consistent design language
 
 ### Brand Guidelines
 
@@ -156,6 +161,7 @@ The build outputs a static bundle (`dist/`) that works on:
 - Apply `hover:shadow-mint` for interactive elements
 - Follow top-only spacing with `mt-*` classes
 - Maintain Inter font family consistency
+- Use Heroicons for all iconography
 
 ## 🎯 Roadmap
 
@@ -175,6 +181,7 @@ The build outputs a static bundle (`dist/`) that works on:
 
 **Styling:**
 - Tailwind CSS 3.4.0 - Utility-first CSS
+- Heroicons - Professional SVG icon library
 - Inter font - Typography
 
 **Development:**
@@ -193,7 +200,10 @@ Verify Tailwind is processing `src/input.css`. Check `postcss.config.js` configu
 Ensure `slides.md` uses proper `---` separators and valid Markdown syntax.
 
 **Build failing?**  
-Run `pnpm install` to ensure all dependencies are installed with correct versions.
+Run `npm install` to ensure all dependencies are installed with correct versions.
+
+**Icons not displaying?**  
+Verify Heroicons are properly imported and SVG syntax is correct in slides.
 
 ---
 

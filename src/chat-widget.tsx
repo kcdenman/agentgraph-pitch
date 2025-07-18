@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/solid';
 
 function ChatUI() {
   const [open, setOpen] = useState(false);
@@ -39,7 +40,7 @@ function ChatUI() {
         className="bg-mint text-brand-black shadow-mint hover:shadow-lg rounded-full p-3 focus:outline-none transition-all duration-200"
         aria-label="Open AgentGraph AI Chat"
       >
-        🤖
+        <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
       </button>
 
       {open && (
