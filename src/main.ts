@@ -4,6 +4,9 @@ import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
 // Import our Tailwind styles
 import './input.css';
 
+// Import slides content as text
+import slidesContent from './slides.md?raw';
+
 // Initialize Reveal.js
 const deck = new Reveal({
   plugins: [Markdown],
@@ -14,6 +17,24 @@ const deck = new Reveal({
   }
 });
 
+// Load slides content programmatically
+function loadSlides() {
+  const slidesContainer = document.querySelector('.slides');
+  if (slidesContainer && slidesContent) {
+    // Split slides by separator and create sections
+    const slides = slidesContent.split(/\n---\n/);
+    
+    slides.forEach((slideContent: string) => {
+      const section = document.createElement('section');
+      section.setAttribute('data-markdown', '');
+      section.innerHTML = `<textarea data-template>${slideContent.trim()}</textarea>`;
+      slidesContainer.appendChild(section);
+    });
+  }
+}
+
+// Load slides and initialize Reveal
+loadSlides();
 deck.initialize();
 
 // Dark mode toggle functionality

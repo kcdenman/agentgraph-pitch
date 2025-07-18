@@ -19,4 +19,10 @@ declare module 'reveal.js' {
 declare module 'reveal.js/plugin/markdown/markdown.esm.js' {
   const Markdown: any;
   export default Markdown;
+}
+
+// Vite raw import types
+declare module '*.md?raw' {
+  const content: string;
+  export default content;
 } 
